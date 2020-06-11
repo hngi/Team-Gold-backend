@@ -18,10 +18,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('plan', 'UserController@plan');
+Route::group(['prefix' => 'v1'], function () {
 
-Route::get('user', 'UserController@user');
+    /*Get all Plan*/
+    Route::get('plan', 'UserController@plan');
 
-Route::post('create', 'UserController@create');
+    /*Get all Users*/
+    Route::get('user', 'UserController@user');
 
-Route::post('subscribe', 'UserController@subscribe');
+    /*Run subscriptions for users*/
+    Route::post('subscribe', 'UserController@subscribe');
+
+    /*Create Users*/
+    Route::post('create', 'UserController@create');
+
+});
