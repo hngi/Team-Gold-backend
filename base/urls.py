@@ -8,7 +8,7 @@ router.register("user", views.UserViewSet)
 router.register("plan", views.PlanViewSet)
 router.register("subscription", views.SubscriptionViewSet)
 router.register("transaction", views.TransactionViewSet)
-
+app_name = "base"
 urlpatterns = [
     path("", include(router.urls)),
 ]
