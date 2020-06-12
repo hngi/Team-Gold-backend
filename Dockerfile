@@ -1,7 +1,12 @@
-FROM php:7.2-fpm-alpine
+FROM python:3
 
-# Install extensions
-RUN docker-php-ext-install pdo pdo_mysql
+ENV PYTHONUNBUFFERED 1
 
-# Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+WORKDIR /app
+ADD . /app /
+
+COPY ./requirements.txt /app/requirements.txt
+
+RUN pip install -r requirements.txt
+
+COPY . /app
