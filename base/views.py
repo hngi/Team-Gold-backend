@@ -14,28 +14,28 @@ from .models import User, Plan, Subscription, Transaction
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    """Handles Listing users."""
+    """Handles Listing, Creating, Deleting and Updating users."""
 
     serializer_class = serializers.UserSerializer
     queryset = User.objects.all()
 
 
 class PlanViewSet(viewsets.ModelViewSet):
-    """Handles Listing plans."""
+    """Handles Listing, creating, Deleting and Updating plans."""
 
     serializer_class = serializers.PlanSerializer
     queryset = Plan.objects.all()
 
 
 class SubscriptionViewSet(viewsets.ModelViewSet):
-    """Handles Listing subscriptions."""
+    """Handles Listing, creating, Deleting and Updatingsubscriptions."""
 
     serializer_class = serializers.SubscriptionSerializer
     queryset = Subscription.objects.all()
 
 
 class TransactionViewSet(viewsets.ModelViewSet):
-    """Handles Listing transactions."""
+    """Handles Listing, Creating, Deleting and Updating transactions."""
 
     serializer_class = serializers.TransactionSerializer
     queryset = Transaction.objects.all()
