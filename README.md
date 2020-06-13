@@ -49,4 +49,4 @@ We store user details, their plans, current subscriptions and all transactions. 
    To return data as json, please add /v1.json to the url. It also supports yaml, which can be gotten by appending /v1.json
    Also, a much more sophisticated doc is available by appending /redoc/.
 
-This is Team Gold's backend Task
+Team Gold's backend Task.
