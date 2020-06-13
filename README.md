@@ -10,5 +10,6 @@ We store user details, their plans, current subscriptions and all transactions. 
    E.g subscription.microapi.dev/api/plan/11/delete will delete a plan with the id 11.
    {ID} parameters relate to the id of a particular object. Every list, user, transaction and subscriptions are given ids. Use this to access them. Please note that two models can have the same id, since they exist as separate entities.
    To return data as json, please add /v1.json to the url. It also supports yaml, which can be gotten by appending /v1.json
+   Also, a much more sophisticated doc is available by appending /redoc/.
 
 This is Team Gold's backend Task
