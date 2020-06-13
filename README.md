@@ -1,5 +1,5 @@
 
-SUBSCRIBER API
+TEAM GOLD SUBSCRIBER API
 =========================
 #### A dockerized micro-service for subscribing to a Saas app
 
