@@ -1,0 +1,501 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This SAAS API documentation.It contains everythings you need to know about the SAAS",
+    "version": "1.0.0",
+    "title": "SAAS"
+  },
+  "host": "localhost",
+  "basePath": "/v1-node",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": [
+          "USER"
+        ],
+        "summary": "User can login",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully login",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/USER"
+              }
+            }
+          },
+          "400": {
+            "description": "Login fail"
+          }
+        }
+      }
+    },
+    "/signup": {
+      "post": {
+        "tags": [
+          "USER"
+        ],
+        "summary": "User can signup",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully signup",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/USER"
+              }
+            }
+          },
+          "400": {
+            "description": "Signup fail"
+          }
+        }
+      }
+    },
+    "/subscribe": {
+      "post": {
+        "tags": [
+          "SUBSCRIPTION"
+        ],
+        "summary": "Make a new subscription",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully create subscription",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SUBSCRIPTION"
+              }
+            }
+          },
+          "400": {
+            "description": "Subcription fail"
+          }
+        }
+      }
+    },
+    "/plan": {
+      "post": {
+        "tags": [
+          "PLAN"
+        ],
+        "summary": "Make a new plan",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully create new plan",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PLAN"
+              }
+            }
+          },
+          "400": {
+            "description": "plan fail"
+          }
+        }
+      }
+    },
+    "/plan/{plan_id}": {
+      "get": {
+        "tags": [
+          "PLAN"
+        ],
+        "summary": "Get the plan of a unique user",
+        "description": "To get the plan of a particular user",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "description": "plan ID of user whose plan is to be fetch",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "plan found",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PLAN"
+              }
+            }
+          },
+          "404": {
+            "description": "plan not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PLAN"
+        ],
+        "summary": "Delete plan",
+        "description": "Delete the plan of a unique user",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "description": "plan ID of user whose plan is to be deleted",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "plan Successfully delete",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PLAN"
+              }
+            }
+          },
+          "400": {
+            "description": "Fail"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PLAN"
+        ],
+        "summary": "Update plan",
+        "description": "To Update the plan of a user",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "description": "plan ID of the user that needs to be updated",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "plan updated successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PLAN"
+              }
+            }
+          },
+          "404": {
+            "description": "No update"
+          }
+        }
+      }
+    },
+    "/plan/all": {
+      "get": {
+        "tags": [
+          "PLAN"
+        ],
+        "summary": "Get all plan",
+        "description": "Get the plan of all users",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "fetch plan successfully",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PLAN"
+              }
+            }
+          },
+          "404": {
+            "description": "plan fail to get fetch"
+          }
+        }
+      }
+    },
+    "/subscriptions/{sub_id}": {
+      "get": {
+        "tags": [
+          "SUBSCRIPTION"
+        ],
+        "summary": "Get the Subscription of a unique subscriber",
+        "description": "To get the Subscription of a particular subscriber",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sub_id",
+            "in": "path",
+            "description": "ID of Subscriber whose subscription is to be fetch",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Subcription found",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SUBSCRIPTION"
+              }
+            }
+          },
+          "404": {
+            "description": "Subcription not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SUBSCRIPTION"
+        ],
+        "summary": "Delete the Subscription",
+        "description": "Delete the Subscription of a unique subscriber",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sub_id",
+            "in": "path",
+            "description": "ID of Subscriber whose subscription is to be deleted",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Subcription Successfully delete",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SUBSCRIPTION"
+              }
+            }
+          },
+          "400": {
+            "description": "Fail"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SUBSCRIPTION"
+        ],
+        "summary": "Update Subscription",
+        "description": "To Update the Subscription of a subscriber",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sub_id",
+            "in": "path",
+            "description": "ID of the subscription that needs to be updated",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "update successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SUBSCRIPTION"
+              }
+            }
+          },
+          "404": {
+            "description": "No update"
+          }
+        }
+      }
+    },
+    "/subscriptions/all": {
+      "get": {
+        "tags": [
+          "SUBSCRIPTION"
+        ],
+        "summary": "Get all subscriptions",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SUBSCRIPTION"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid subscription Id supplied"
+          }
+        }
+      }
+    },
+    "/subscriptions/subscriber/{sub_id}": {
+      "get": {
+        "tags": [
+          "SUBSCRIPTION"
+        ],
+        "summary": "Get subscriber by subscriber id",
+        "description": "",
+        "operationId": "getsubscriberBysubscriber id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sub_id",
+            "in": "path",
+            "description": "The subcription id of subscriber that needs to be fetched.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SUBSCRIPTION"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid subscription Id supplied"
+          },
+          "404": {
+            "description": "Subscriber not found"
+          }
+        }
+      }
+    },
+    "/subscriptions/plan/{sub_id}": {
+      "get": {
+        "tags": [
+          "SUBSCRIPTION"
+        ],
+        "summary": "Get subscription plan by subcriber id",
+        "description": "",
+        "operationId": "get by subcriber id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sub_id",
+            "in": "path",
+            "description": "The subcriber id of subscriber that plan needs to be fetched.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SUBSCRIPTION"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid subscriber Id supplied"
+          },
+          "404": {
+            "description": "Subscriber not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "USER": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "PLAN": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "cost": {
+          "type": "number"
+        },
+        "Discount": {
+          "type": "number"
+        }
+      }
+    },
+    "SUBSCRIPTION": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean"
+        },
+        "start_time": {
+          "type": "dateTime"
+        },
+        "end_time": {
+          "type": "dateTime"
+        },
+        "plan": {
+          "type": "string"
+        },
+        "user": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
