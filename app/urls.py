@@ -33,7 +33,8 @@ schema_view = get_schema_view(
         5. Delete deletes all stored data.
         E.g subscription.microapi.dev/api/plan/11/delete will delete a plan with the id 11.
         {ID} parameters relate to the id of a particular object. Every list, user, transaction and subscriptions are given ids. Use this to access them. Please note that two models can have the same id, since they exist as separate entities.
-               To return data as json, please add /v1.json to the url. It also supports yaml""",
+               To return data as json, please add /v1.json to the url. It also supports yaml.
+               Also, a much more sophisticated doc is available by appending /redoc/. Thanks for using our microservice""",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="contact@snippets.local"),
         license=openapi.License(name="BSD License"),
@@ -56,7 +57,7 @@ urlpatterns += [
     path(
         "", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui",
     ),
-    path(
+    re_path(
         r"^redoc/$", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"
     ),
     path("rest-auth/", include("rest_auth.urls")),
