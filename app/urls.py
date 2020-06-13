@@ -25,3 +25,5 @@ urlpatterns = [
     path("api/v1/", include("base.urls", namespace="v1")),
     path("api-auth/", include("rest_framework.urls")),
 ]
+urlpatterns += [path("", schema_view), path("rest-auth/", include("rest_auth.urls"))]
+
