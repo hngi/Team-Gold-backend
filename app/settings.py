@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "base",
     "rest_framework",
     "rest_auth",
+    "drf_yasg",
     "rest_framework_swagger",
 ]
 
@@ -125,3 +126,6 @@ REST_FRAMEWORK = {
     ),
 }
 REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema"}
+LOGIN_URL = "rest_framework:login"
+LOGOUT_URL = "rest_framework:logout"
+JSON_EDITOR = True
