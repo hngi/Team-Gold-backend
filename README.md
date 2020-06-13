@@ -33,4 +33,3 @@ Visit List all the APIs documentation
 
 Visit List all the APIs on localhost
 [http://localhost:8080/api/](http://localhost:8080/api/)
-
