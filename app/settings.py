@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "base",
     "rest_framework",
     "rest_framework_swagger",
+    'rest_framework_simplejwt',
+
 ]
 
 MIDDLEWARE = [
@@ -134,5 +136,7 @@ REST_FRAMEWORK = {
     ]
 }
 REST_FRAMEWORK = {
-    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema"
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+    'DEFAULT_AUTHENTICATION_CLASSES' : ('rest_framework_simplejwt.authentication.JWTAuthentication',)
+
 }

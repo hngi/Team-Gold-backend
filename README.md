@@ -34,3 +34,27 @@ Visit List all the APIs documentation
 Visit List all the APIs on localhost
 [http://localhost:8080/api/](http://localhost:8080/api/)
 
+
+
+Alternatively, Get Started with PIP ENV 
+----------------------------------------
+Run the following commands to get started using virtualenv
+
+``` shell
+# once - Install Pip Library for the Virtual Enviroment
+pip install pipenv
+```
+
+# activate it
+``` shell
+# once - create virtual environment
+Pip shell
+```
+# install other dependencies
+```
+pipenv run install -r requirements.txt
+pipenv run manage.py migrate
+pipenv run manage.py makemigrations
+pipenv run manage.py createsuperuser
+pipenv run manage.py runserver 8080
+```

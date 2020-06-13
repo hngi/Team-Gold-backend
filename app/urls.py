@@ -16,12 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_swagger.views import get_swagger_view
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
 
 schema_view = get_swagger_view(title="Subscriber API Documentation")
 
 urlpatterns = [
-    path("docs/v1/", schema_view),
+    path(" ", schema_view),
     path("admin/", admin.site.urls),
     path("api/v1/", include("base.urls", namespace="v1")),
     path("api-auth/", include("rest_framework.urls")),
+    path('api/token/', TokenObtainPairView.as_view()),
+    path('api/token/refresh/', TokenRefreshView.as_view()),
 ]
