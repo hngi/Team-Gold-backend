@@ -20,6 +20,7 @@ from rest_framework_swagger.views import get_swagger_view
 schema_view = get_swagger_view(title="Subscriber API Documentation")
 
 urlpatterns = [
+    path("docs/v1/", schema_view),
     path("rest-auth/", include("rest_auth.urls")),
     path("admin/", admin.site.urls),
     path("api/", include("base.urls")),
