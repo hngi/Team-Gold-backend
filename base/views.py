@@ -9,33 +9,33 @@ from .serializers import (
     SubscriptionSerializer,
     TransactionSerializer,
 )
-from . import models
+
 from .models import User, Plan, Subscription, Transaction
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    """Handles Listing users."""
+    """Handles Listing, Creating, Deleting and Updating users."""
 
     serializer_class = serializers.UserSerializer
-    queryset = models.User.objects.all()
+    queryset = User.objects.all()
 
 
 class PlanViewSet(viewsets.ModelViewSet):
-    """Handles Listing plans."""
+    """Handles Listing, creating, Deleting and Updating plans."""
 
     serializer_class = serializers.PlanSerializer
-    queryset = models.Plan.objects.all()
+    queryset = Plan.objects.all()
 
 
 class SubscriptionViewSet(viewsets.ModelViewSet):
-    """Handles Listing subscriptions."""
+    """Handles Listing, creating, Deleting and Updatingsubscriptions."""
 
     serializer_class = serializers.SubscriptionSerializer
-    queryset = models.Subscription.objects.all()
+    queryset = Subscription.objects.all()
 
 
 class TransactionViewSet(viewsets.ModelViewSet):
-    """Handles Listing transactions."""
+    """Handles Listing, Creating, Deleting and Updating transactions."""
 
     serializer_class = serializers.TransactionSerializer
-    queryset = models.Transaction.objects.all()
+    queryset = Transaction.objects.all()
