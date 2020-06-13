@@ -21,12 +21,13 @@ virtualenv env -p python3.6
 # activate it
 source env/bin/activate
 
-# install deps
+# install steps
 ```
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
+1.make sure youve navigated to the folder containing the cloned files in your terminal
+2.pip install -r requirements.txt
+3.python manage.py migrate
+4.python manage.py createsuperuser
+5.python manage.py runserver
 
 ```
 Visit List all the APIs documentation
