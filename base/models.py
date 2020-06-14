@@ -21,8 +21,9 @@ class Plan(models.Model):
 
     name = models.CharField(max_length=100)
     # type = models.CharField(max_length=100)
-    cost = models.IntegerField()
-    annual_discount = models.IntegerField()
+    # FloatField offers more flexibility than InterField
+    cost = models.FloatField()
+    annual_discount = models.FloatField()
 
     def ___str___(self):
         return self.name
@@ -34,9 +35,11 @@ class Subscription(models.Model):
 
     name = models.CharField(max_length=100)
 
+    
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="user"
-    )
+        User, on_delete=models.CASCADE, related_name="user_subscription" 
+    )# Using 'user_subscription' as opposed to 'user' as the value of related name enhances readability
+    # and allows anyone quickly understand the to use it to backtrack from subscription model to user model
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
 
